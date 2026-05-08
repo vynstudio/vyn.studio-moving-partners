@@ -8,4 +8,4 @@
 export const CAL_NAMESPACE = 'moving-partner';
 
 export const CAL_LINK =
-  process.env.NEXT_PUBLIC_CAL_LINK ?? 'vyn-studio/moving-partner';
+  process.env.NEXT_PUBLIC_CAL_LINK ?? 'vyn.studio/moving-partner';
