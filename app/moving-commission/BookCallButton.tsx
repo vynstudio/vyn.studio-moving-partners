@@ -1,6 +1,7 @@
 'use client';
 
-import { MouseEvent, ReactNode } from 'react';
+import { ReactNode } from 'react';
+import { CAL_LINK, CAL_NAMESPACE } from './cal-config';
 
 type Variant = 'primary' | 'secondary';
 type Size = 'default' | 'compact';
@@ -14,28 +15,14 @@ interface BookCallButtonProps {
   source?: string;
 }
 
-// TODO: replace with the real Cal.com link under vyn.studio once provisioned
-// e.g. https://cal.com/vyn.studio/moving-partner-consultation
-const BOOKING_URL = '';
-
 export default function BookCallButton({
   children,
   variant = 'primary',
   size = 'default',
   fullWidth = false,
   className = '',
-  source = 'unknown',
+  source,
 }: BookCallButtonProps) {
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    if (BOOKING_URL) {
-      window.open(BOOKING_URL, '_blank', 'noopener,noreferrer');
-      return;
-    }
-    // TODO: wire Cal.com link (vyn.studio account)
-    console.log('[moving-partner] book consultation clicked', { source });
-  };
-
   const base =
     'inline-flex items-center justify-center rounded-xl font-semibold transition-colors duration-150 focus:outline-none focus-visible:ring-4';
   const sizeClasses =
@@ -57,7 +44,10 @@ export default function BookCallButton({
   return (
     <button
       type="button"
-      onClick={handleClick}
+      data-cal-namespace={CAL_NAMESPACE}
+      data-cal-link={CAL_LINK}
+      data-cal-config='{"layout":"month_view"}'
+      data-cta-source={source}
       className={`${base} ${sizeClasses} ${width} ${styles} ${className}`}
     >
       {children}

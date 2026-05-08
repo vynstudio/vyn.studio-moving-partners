@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import CalInit from './CalInit';
 
 export const metadata: Metadata = {
   title: 'Moving Partner — Free Website + Ad Management for U.S. Movers',
@@ -15,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans bg-white text-slate-900">{children}</body>
+      <body className="font-sans bg-white text-slate-900">
+        <CalInit />
+        {children}
+      </body>
     </html>
   );
 }
