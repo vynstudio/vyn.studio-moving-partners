@@ -22,7 +22,7 @@ const steps = [
   {
     label: 'Step 3',
     title: 'You get booked jobs — we earn a commission',
-    body: 'When a customer books a move and pays an upfront deposit, that deposit (or a portion of it) is our commission. You keep the rest of the profit from the job.',
+    body: 'When a customer books a move with you, we earn a commission on that job. You keep the rest of the profit. The exact structure is what we walk through 1:1 on the strategy call.',
   },
 ];
 
@@ -62,7 +62,7 @@ const caseStudies = [
   {
     company: 'Long-Distance Mover, Texas',
     headline: '3.4× lead-to-booking rate',
-    body: 'Rebuilt the quote flow around fast call-back + same-day deposit. Same ad spend, materially more revenue per lead.',
+    body: 'Rebuilt the quote flow around fast call-back and same-day confirmation. Same ad spend, materially more revenue per lead.',
   },
   {
     company: 'Two-Truck Operator, Georgia',
@@ -85,7 +85,7 @@ const faqItems: FAQItem[] = [
   {
     question: 'How exactly do you get paid?',
     answer:
-      'When a customer books a move and pays an upfront deposit, that deposit (or a portion of it) is our commission. You keep the rest of the profit on the job. We walk through the exact deposit and commission structure 1:1 on the strategy call so we can align with your margins and your market.',
+      'We earn a commission when our funnel produces a booked job for you — no booked jobs, no payment to us. The exact commission structure is something we walk through 1:1 on the strategy call so we can align with your margins and your market.',
   },
   {
     question: 'Are there long contracts? Can I stop anytime?',
@@ -151,9 +151,9 @@ export default function MovingCommissionPage() {
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 lg:text-xl">
                 We design your moving website, build the funnel, and run your
-                Meta and Google ads. You pay the ad spend directly. We earn only
-                when a customer books a move and pays a deposit. No retainers.
-                No hourly fees. No percentage of ad spend.
+                Meta and Google ads. You pay the ad spend directly. We earn
+                only when a customer books a move with you. No retainers. No
+                hourly fees. No percentage of ad spend.
               </p>
 
               <ul className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-2">
@@ -239,9 +239,9 @@ export default function MovingCommissionPage() {
           ))}
         </div>
         <p className="mt-8 rounded-xl border border-slate-200 bg-white p-5 text-sm leading-relaxed text-slate-600 sm:text-base">
-          The exact commission structure and deposit flow are explained 1:1 on
-          your strategy call so we can align with your margins, your service
-          area, and the way you already run jobs.
+          The exact commission structure is explained 1:1 on your strategy
+          call so we can align with your margins, your service area, and the
+          way you already run jobs.
         </p>
       </Section>
 
@@ -350,8 +350,8 @@ export default function MovingCommissionPage() {
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-blue-100 sm:text-lg">
               Book a 30-minute consultation. We&apos;ll look at your service
-              area, your current funnel, and walk you through the deposit and
-              commission structure 1:1.
+              area, your current funnel, and walk you through the commission
+              structure 1:1.
             </p>
             <div className="mt-8 flex justify-center">
               <BookCallButton source="footer-cta" fullWidth>
