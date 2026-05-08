@@ -111,51 +111,57 @@ const faqItems: FAQItem[] = [
 
 export default function MovingCommissionPage() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
+    <main className="min-h-screen bg-slate-50 text-slate-900 [&_section]:scroll-mt-20">
+      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:py-4">
           <a href="/" className="flex items-center gap-2 font-bold tracking-tight text-slate-900">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white">
+            <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white shadow-sm sm:h-9 sm:w-9">
               M
             </span>
-            <span className="text-lg">Moving Partner</span>
+            <span className="text-base sm:text-lg">Moving Partner</span>
           </a>
-          <a
-            href="#how-it-works"
-            className="text-sm font-medium text-slate-600 hover:text-slate-900"
-          >
-            How it works
-          </a>
+          <nav className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
+            <a href="#how-it-works" className="hover:text-slate-900">How it works</a>
+            <a href="#what-you-get" className="hover:text-slate-900">What you get</a>
+            <a href="#faq" className="hover:text-slate-900">FAQ</a>
+          </nav>
+          <BookCallButton source="header" size="compact">
+            Book consultation
+          </BookCallButton>
         </div>
       </header>
 
-      <section className="bg-white">
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div>
+      <section className="relative overflow-hidden bg-white">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 -top-40 hidden h-[480px] bg-gradient-to-b from-blue-50/70 via-white to-transparent lg:block"
+        />
+        <div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:py-28">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+            <div className="lg:col-span-7">
               <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-700">
                 <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                Commission-only partnership
+                Commission-only partnership for U.S. movers
               </span>
-              <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+              <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl xl:text-[68px]">
                 Free moving website &amp; ad management.{' '}
                 <span className="text-blue-700">
                   We only get paid when you get booked.
                 </span>
               </h1>
-              <p className="mt-5 text-lg leading-relaxed text-slate-600">
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 lg:text-xl">
                 We design your moving website, build the funnel, and run your
                 Meta and Google ads. You pay the ad spend directly. We earn only
                 when a customer books a move and pays a deposit. No retainers.
                 No hourly fees. No percentage of ad spend.
               </p>
 
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-2">
                 {[
                   'Done-for-you moving website built to convert.',
-                  'Meta &amp; Google ads managed for you, end to end.',
+                  'Meta &amp; Google ads managed end to end.',
                   'You pay the ad spend. We earn only on booked jobs.',
-                  'No retainers. No hourly fees. Commission-only partnership.',
+                  'No retainers. No hourly fees. Commission-only.',
                 ].map((line, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckIcon />
@@ -167,9 +173,9 @@ export default function MovingCommissionPage() {
                 ))}
               </ul>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <BookCallButton source="hero">
-                  Book a strategy call
+                  Book consultation
                 </BookCallButton>
                 <a
                   href="#how-it-works"
@@ -178,20 +184,32 @@ export default function MovingCommissionPage() {
                   See how it works →
                 </a>
               </div>
+              <p className="mt-4 text-sm text-slate-500">
+                30-minute call · No retainer · No long contracts
+              </p>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-              <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-                What you actually pay for
-              </p>
-              <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                <Stat label="Website build" value="$0" />
-                <Stat label="Ad management" value="$0" />
-                <Stat label="Our cut" value="On booked jobs only" small />
-              </div>
-              <div className="mt-6 rounded-xl border border-blue-100 bg-blue-50/60 p-4 text-sm text-blue-900">
-                <strong>What you do pay:</strong> the ad spend on Meta and
-                Google, billed directly by them — never through us.
+            <div className="lg:col-span-5">
+              <div className="relative rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm sm:p-8 lg:p-9">
+                <div className="absolute -top-3 right-6 hidden rounded-full bg-emerald-500 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white shadow-sm sm:inline-flex">
+                  Pricing
+                </div>
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  What you actually pay for
+                </p>
+                <div className="mt-5 grid grid-cols-1 gap-4">
+                  <Stat label="Website build" value="$0" />
+                  <Stat label="Ad management" value="$0" />
+                  <Stat label="Our cut" value="On booked jobs only" small />
+                </div>
+                <div className="mt-6 rounded-xl border border-blue-100 bg-blue-50/60 p-4 text-sm leading-relaxed text-blue-900">
+                  <strong>What you do pay:</strong> the ad spend on Meta and
+                  Google, billed directly by them — never through us.
+                </div>
+                <div className="mt-5 flex items-center gap-3 text-xs text-slate-500">
+                  <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500 ring-4 ring-emerald-100" />
+                  Onboarding live in 1–2 weeks
+                </div>
               </div>
             </div>
           </div>
@@ -228,6 +246,7 @@ export default function MovingCommissionPage() {
       </Section>
 
       <Section
+        id="what-you-get"
         eyebrow="What you get"
         title="Everything included — without paying agency fees"
         background="white"
@@ -310,25 +329,33 @@ export default function MovingCommissionPage() {
         </div>
       </Section>
 
-      <Section eyebrow="FAQ" title="Common questions about the commission model">
+      <Section id="faq" eyebrow="FAQ" title="Common questions about the commission model">
         <FAQAccordion items={faqItems} />
       </Section>
 
-      <section className="bg-blue-700">
-        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-700 to-blue-800">
+        <div
+          aria-hidden="true"
+          className="absolute -right-24 -top-24 hidden h-96 w-96 rounded-full bg-blue-500/20 blur-3xl lg:block"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-24 -left-24 hidden h-96 w-96 rounded-full bg-emerald-400/10 blur-3xl lg:block"
+        />
+        <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
               Ready to get a free website, free ad management, and pay only on
               booked jobs?
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-blue-100 sm:text-lg">
-              Book a 30-minute strategy call. We&apos;ll look at your service
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-blue-100 sm:text-lg">
+              Book a 30-minute consultation. We&apos;ll look at your service
               area, your current funnel, and walk you through the deposit and
               commission structure 1:1.
             </p>
             <div className="mt-8 flex justify-center">
               <BookCallButton source="footer-cta" fullWidth>
-                Book a strategy call
+                Book consultation
               </BookCallButton>
             </div>
             <p className="mt-4 text-sm text-blue-200">
@@ -339,7 +366,7 @@ export default function MovingCommissionPage() {
       </section>
 
       <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:px-6">
           <p>© {new Date().getFullYear()} Moving Partner. All rights reserved.</p>
           <a
             href="https://movingpartner.net"
@@ -365,16 +392,16 @@ function Section({ id, eyebrow, title, background = 'slate', children }: Section
   const bg = background === 'white' ? 'bg-white' : 'bg-slate-50';
   return (
     <section id={id} className={`${bg} border-t border-slate-200`}>
-      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
         {eyebrow && (
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">
             {eyebrow}
           </p>
         )}
-        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
+        <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
           {title}
         </h2>
-        <div className="mt-8">{children}</div>
+        <div className="mt-10">{children}</div>
       </div>
     </section>
   );
