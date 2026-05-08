@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function SiteFooter() {
@@ -6,14 +7,14 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
-            <Link
-              href="/"
-              className="flex items-center gap-2 font-bold tracking-tight text-slate-900"
-            >
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white">
-                M
-              </span>
-              <span className="text-lg">Moving Partner</span>
+            <Link href="/" className="inline-flex items-center" aria-label="Moving Partner — home">
+              <Image
+                src="/logo.png"
+                alt="Moving Partner"
+                width={4500}
+                height={1419}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-600">
               Free moving website and ad management for U.S. moving companies.
