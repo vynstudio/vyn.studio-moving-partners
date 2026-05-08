@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Vyn Studio — Moving Partners',
+  title: 'Moving Partner — Free Website + Ad Management for U.S. Movers',
   description:
     'Free moving website + ad management for U.S. moving companies. We only get paid when you get booked jobs. Commission-only partnership.',
-  metadataBase: new URL('https://vyn.studio'),
+  metadataBase: new URL('https://movingpartner.net'),
 };
 
 export default function RootLayout({

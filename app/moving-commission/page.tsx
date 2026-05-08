@@ -3,7 +3,7 @@ import BookCallButton from './BookCallButton';
 import FAQAccordion, { FAQItem } from './FAQAccordion';
 
 export const metadata: Metadata = {
-  title: 'Free Moving Website + Ad Management — Pay Only on Booked Jobs | Vyn Studio',
+  title: 'Moving Partner — Free Moving Website + Ad Management, Pay Only on Booked Jobs',
   description:
     'We build the website and run the ads for U.S. moving companies. No retainers, no hourly fees. We only get paid when you get booked jobs.',
 };
@@ -116,15 +116,15 @@ export default function MovingCommissionPage() {
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
           <a href="/" className="flex items-center gap-2 font-bold tracking-tight text-slate-900">
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white">
-              V
+              M
             </span>
-            <span className="text-lg">Vyn Studio</span>
+            <span className="text-lg">Moving Partner</span>
           </a>
           <a
-            href="/"
+            href="#how-it-works"
             className="text-sm font-medium text-slate-600 hover:text-slate-900"
           >
-            Back to main site
+            How it works
           </a>
         </div>
       </header>
@@ -340,9 +340,12 @@ export default function MovingCommissionPage() {
 
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:px-6">
-          <p>© {new Date().getFullYear()} Vyn Studio. All rights reserved.</p>
-          <a href="/" className="font-medium text-slate-600 hover:text-slate-900">
-            vyn.studio
+          <p>© {new Date().getFullYear()} Moving Partner. All rights reserved.</p>
+          <a
+            href="https://movingpartner.net"
+            className="font-medium text-slate-600 hover:text-slate-900"
+          >
+            movingpartner.net
           </a>
         </div>
       </footer>
