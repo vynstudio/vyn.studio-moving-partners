@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { getCalApi } from '@calcom/embed-react';
-import { CAL_NAMESPACE } from './moving-commission/cal-config';
+import { CAL_NAMESPACE } from './_components/cal-config';
 
 export default function CalInit() {
   useEffect(() => {
